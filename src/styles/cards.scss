@@ -15,7 +15,6 @@
   height: 177px;
   padding: 18px 22px;
   background: $bg-secondary;
-  margin: 2rem;
 
   .when {
     @include bold();
@@ -32,6 +31,25 @@
 
     span:first-child {
       @include bold();
+    }
+  }
+}
+
+.highLight-card {
+  display: grid;
+  gap: 15px;
+  text-align: center;
+  padding: 22px 50px 38px;
+  background: $bg-secondary;
+  @include bold();
+
+  .result {
+    font-size: 36px;
+    font-weight: 400;
+
+    span:first-child {
+      font-size: 64px;
+      font-weight: 700;
     }
   }
 }
