@@ -1,5 +1,13 @@
+import LeftSide from "./section/left";
+import RightSide from "./section/right";
+
 function App() {
-  return <h1>Weather App</h1>;
+  return (
+    <>
+      <LeftSide />
+      <RightSide />
+    </>
+  );
 }
 
 export default App;

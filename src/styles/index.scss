@@ -1,4 +1,6 @@
 @use "variables" as *;
+@forward "leftSide";
+@forward "rightSide";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;500;600;700&display=swap");
 
 *,
@@ -14,7 +16,14 @@ html {
 body {
   font-family: "Raleway", sans-serif;
   margin: 0;
-  color: $clr-primary;
+  color: $clr-secondary;
   background-color: $bg-primary;
   min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+#root {
+  @media (min-width: 678px) {
+    display: flex;
+  }
 }
