@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+@mixin bold {
+  font-weight: 500;
+  color: $clr-primary;
+}
+
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  text-transform: capitalize;
+  width: 120px;
+  height: 177px;
+  padding: 18px 22px;
+  background: $bg-secondary;
+  margin: 2rem;
+
+  .when {
+    @include bold();
+  }
+
+  img {
+    width: 56.44px;
+    height: 62px;
+  }
+
+  .tempertures {
+    display: flex;
+    justify-content: space-between;
+
+    span:first-child {
+      @include bold();
+    }
+  }
+}
