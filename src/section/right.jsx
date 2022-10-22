@@ -13,8 +13,29 @@ const Wrapper = ({ a, b }) => {
 const RightSide = () => {
   return (
     <div className="right">
-      <WeatherCard when="today" status="HeavyRain" min="11°C" max="16°C" />
-      <HighLightCard title="Wind status" result={<Wrapper a="7" b="mph" />} />
+      <div className="weather-section">
+        {[...Array(5)].map((a, i) => (
+          <WeatherCard
+            key={i}
+            when="today"
+            status="HeavyRain"
+            min="11°C"
+            max="16°C"
+          />
+        ))}
+      </div>
+
+      <div className="highlights-section">
+        <h1>Today's Hightlights </h1>
+
+        {[...Array(4)].map((a, i) => (
+          <HighLightCard
+            key={i}
+            title="Wind status"
+            result={<Wrapper a="7" b="mph" />}
+          />
+        ))}
+      </div>
     </div>
   );
 };

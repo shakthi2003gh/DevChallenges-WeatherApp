@@ -1,6 +1,42 @@
+@use "variables" as *;
 @forward "cards";
 
 .right {
   width: 100%;
   height: 100vh;
+
+  .weather-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    justify-items: center;
+    gap: 26px;
+    max-width: 818px;
+    margin-inline: auto;
+    padding: 52px 54px;
+  }
+
+  .highlights-section {
+    display: grid;
+    gap: 32px;
+    width: 90%;
+    max-width: 1170px;
+    padding-bottom: 3rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: $big-device) {
+    overflow-y: auto;
+
+    .highlights-section {
+      grid-template-columns: repeat(2, 1fr);
+      place-content: center;
+      gap: 48px;
+      max-width: 704px;
+      margin-inline: auto;
+
+      h1 {
+        grid-column: span 2;
+      }
+    }
+  }
 }

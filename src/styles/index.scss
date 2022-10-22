@@ -23,7 +23,15 @@ body {
 }
 
 #root {
-  @media (min-width: 678px) {
+  @media (min-width: $big-device) {
     display: flex;
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $clr-secondary;
 }
