@@ -13,6 +13,11 @@ const Wrapper = ({ a, b }) => {
 const RightSide = () => {
   return (
     <div className="right">
+      <div className="temperture-btns">
+        <button className="active">℃</button>
+        <button>℉</button>
+      </div>
+
       <div className="weather-section">
         {[...Array(5)].map((a, i) => (
           <WeatherCard
@@ -36,6 +41,14 @@ const RightSide = () => {
           />
         ))}
       </div>
+
+      <p className="create-by">
+        created by{" "}
+        <a href="https://github.com/shakthi2003gh" title="Github">
+          Shakthi
+        </a>{" "}
+        - devChallenges.io
+      </p>
     </div>
   );
 };

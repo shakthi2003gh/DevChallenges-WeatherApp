@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  justify-items: center;
   align-items: center;
   gap: 1rem;
   font-size: 18px;
@@ -12,6 +13,7 @@
   text-align: center;
   width: 100%;
   min-height: 100vh;
+  padding-block: 100px 50px;
   transition: width 0.5s ease;
   background: $lg-left-bg,
     url(../../public/images/Cloud-background.png) no-repeat;
@@ -20,12 +22,41 @@
 
   .button-section {
     position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 18px 11px;
+
+    button {
+      font-family: inherit;
+      font-size: 16px;
+      padding: 11px 18px;
+      border: none;
+      color: $clr-primary;
+      background-color: $bg-accent;
+      cursor: pointer;
+    }
+
+    span {
+      display: grid;
+      place-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 100vh;
+      color: $clr-primary;
+      background-color: $bg-accent;
+    }
+
+    @media (min-width: $big-device) {
+      padding: 30px 25px;
+    }
   }
 
   .weather-icon {
     width: 150px;
     height: 174px;
-    margin-top: 4rem;
   }
 
   .temperture {
@@ -55,13 +86,105 @@
     display: flex;
     justify-content: center;
     gap: 9px;
-    margin: 1rem 0 4rem;
+    margin-top: 1rem;
+  }
+
+  .search-section {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+    padding: 12px;
+    background-color: $bg-secondary;
+
+    &.show {
+      display: flex;
+    }
+
+    span.close {
+      margin-left: auto;
+      color: $clr-primary;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .search-group {
+      position: relative;
+      display: flex;
+      gap: 12px;
+
+      span.search {
+        position: absolute;
+        top: 12px;
+        left: 1rem;
+      }
+
+      input {
+        font-size: 16px;
+        width: 100%;
+        padding-left: 50px;
+        border: 1px solid $clr-secondary;
+        outline: none;
+        color: inherit;
+        background-color: transparent;
+
+        &:focus {
+          border-color: $clr-primary;
+        }
+
+        &::placeholder {
+          font-weight: 500;
+          font-size: 16px;
+        }
+      }
+
+      button {
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 14px 19px;
+        border: none;
+        color: $clr-primary;
+        background-color: $bg-btn;
+      }
+    }
+
+    .search-history {
+      display: grid;
+      text-align: left;
+      text-transform: capitalize;
+      color: $clr-primary;
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid transparent;
+        padding: 22px 12px;
+        transition: border 0.5s ease;
+
+        span {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+
+        &:hover {
+          cursor: pointer;
+          border-color: $bg-accent;
+
+          span {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 
   @media (min-width: $big-device) {
     min-width: 450px;
     width: 40vw;
     max-width: 500px;
+    width: clamp(450px, 40vw, 500px);
     height: 100vh;
     overflow-y: auto;
   }

@@ -4,6 +4,32 @@
 .right {
   width: 100%;
   height: 100vh;
+  padding-top: 3rem;
+
+  .temperture-btns {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 90%;
+    margin-inline: auto;
+
+    button {
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 700;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 100vh;
+      color: $clr-primary;
+      background-color: $bg-accent;
+
+      &.active {
+        color: $bg-secondary;
+        background-color: $clr-primary;
+      }
+    }
+  }
 
   .weather-section {
     display: grid;
@@ -24,19 +50,36 @@
     margin-inline: auto;
   }
 
+  .create-by {
+    text-align: center;
+    padding-bottom: 1rem;
+
+    a {
+      font-weight: bold;
+      color: inherit;
+    }
+  }
+
   @media (min-width: $big-device) {
     overflow-y: auto;
+
+    .temperture-btns {
+      max-width: 704px;
+    }
 
     .highlights-section {
       grid-template-columns: repeat(2, 1fr);
       place-content: center;
       gap: 48px;
       max-width: 704px;
-      margin-inline: auto;
 
       h1 {
         grid-column: span 2;
       }
+    }
+
+    .create-by {
+      padding: 0;
     }
   }
 }
