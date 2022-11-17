@@ -3,7 +3,11 @@ const WeatherCard = ({ when, status, min, max }) => {
     <div className="weather-card">
       <div className="when">{when}</div>
 
-      <img className="weather-icon" src={`/images/${status}.png`} alt={when} />
+      <img
+        className="weather-icon"
+        src={`/images/${status}.png`}
+        alt={status}
+      />
 
       <div className="tempertures">
         <span>{max}</span>
